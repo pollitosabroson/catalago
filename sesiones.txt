@@ -1,11 +1,11 @@
 sesiones 
 productos {
-	nombre
-	slug
-	desc
+	nombre:string
+	slug_string
+	desc:text
 	categoria
-	marca
-	imagen
+	marca_id
+	imagen**
 }
 categorias{
 nombre
@@ -13,8 +13,8 @@ slug
 parent_id
 }
 Marcas{
-	nombre
-	slug
+	nombre:string
+	slug:string
 }
 
 paginas estaticas
