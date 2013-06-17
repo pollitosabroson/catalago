@@ -1,0 +1,20 @@
+sesiones 
+productos {
+	nombre
+	slug
+	desc
+	categoria
+	marca
+	imagen
+}
+categorias{
+nombre
+slug
+parent_id
+}
+Marcas{
+	nombre
+	slug
+}
+
+paginas estaticas
