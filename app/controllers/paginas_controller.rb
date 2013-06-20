@@ -4,6 +4,9 @@ class PaginasController < ApplicationController
   def registro
   end
   def catalago
-    @Nombre
+    @catalago = Producto.all
+  end
+  def form
+    
   end
 end

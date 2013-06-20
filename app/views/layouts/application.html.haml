@@ -5,5 +5,12 @@
     = stylesheet_link_tag    "application", :media => "all"
     = csrf_meta_tags
   %body
+    #wrap
+      .table.full
+        %ul
+          %li
+            %a{:href => "/"} Home
+            %a{:href => "/registro"} Registro
+            %a{:href => "/catalogo"} Catalago
     = yield
     = javascript_include_tag "application"

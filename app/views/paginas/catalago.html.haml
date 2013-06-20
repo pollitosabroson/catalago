@@ -1,1 +1,7 @@
-catalago.html.haml
+%h1 catalgo de productos
+-  @catalago.each do |c |
+  %li.item
+  %nombre
+    = c.nombre
+  %descripcion
+    = c.descripcion

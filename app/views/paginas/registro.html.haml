@@ -1,20 +1,16 @@
-%head
-  %title Formulario de registro
-%body
-  %form#registro-usuarios{:action => "/", :method => "POST"}
-    %p.nombre:
-      = label_tag "nombre","Nombre"
-      = text_field_tag "nombre",""
-    %p.descripcion
-      = label_tag "descripcion","Descripción"
-      = text_field_tag "descripcion",""
-    %p.categoria
-      = label_tag "categoria","Categoria"
-      = text_field_tag "categoria"
-    %p.marca
-      = label_tag "marca","Marca"
-      = text_field_tag "marca"
-
-
-    %input{:type => "submit", :value => "Enviar datos"}/
-    %input{:type => "reset", :value => "Borrar datos"}/
+%h2 Formulario de registro
+=form_for @registro, :url => create_reg_path, do |r|
+  =r.labelbrtext 'Nombre', :nombre
+  %br
+  %br
+  =r.laberbrtext 'Descripción', :descripcion
+  %br
+  %br
+  =r.labelbrtag "categoria",:categoria
+  %br
+  %br
+  %p Marca
+  =r.collection_select(:marca_id, @marca,:id,nombre,{:prompt =>"Selecciona una"})
+  %br
+  %br
+  =f.submit 'Registrar'
