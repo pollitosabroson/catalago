@@ -1,0 +1,20 @@
+%head
+  %title Formulario de registro
+%body
+  %form#registro-usuarios{:action => "/", :method => "POST"}
+    %p.nombre:
+      = label_tag "nombre","Nombre"
+      = text_field_tag "nombre",""
+    %p.descripcion
+      = label_tag "descripcion","Descripción"
+      = text_field_tag "descripcion",""
+    %p.categoria
+      = label_tag "categoria","Categoria"
+      = text_field_tag "categoria"
+    %p.marca
+      = label_tag "marca","Marca"
+      = text_field_tag "marca"
+
+
+    %input{:type => "submit", :value => "Enviar datos"}/
+    %input{:type => "reset", :value => "Borrar datos"}/
