@@ -5,8 +5,6 @@ class RegistroController < ApplicationController
 
   def new_reg
     @producto = Producto.new
-    @nombre = Nombre.all
-    @descripcion = Descripcion.all
     @categoria = Categoria.all
     @marca = Marca.all
   end
@@ -18,5 +16,32 @@ class RegistroController < ApplicationController
     else
       render :new_reg
     end
-  end  
+  end
+
+  def edit_prod
+    @producto = Producto.find_by_slug params[:slug]
+    @categorias = Categoria.all
+  end
+
+  def update_prod
+    @poducto = Producto.find_by_slug params[:slug]
+    if params[:categorias]
+      params[:prducto][:categoria_id] = "{#{params[:categorias].join(',')}}"
+    end
+    if
+      @producto.update_attributes params[:producto]
+      redirect_to ver_path(@producto.slug)
+    else
+      render :edit_prod
+    end
+  end
+  def dest_prod
+    producto = Producto.find(params[:id])
+    if producto.destroy
+      redirect_to admin_prod_path
+      flash[:notice] = "Se elimino el producto"
+    else
+      raise "algo salio mal "
+    end
+  end
 end

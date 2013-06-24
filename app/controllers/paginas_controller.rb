@@ -6,7 +6,4 @@ class PaginasController < ApplicationController
   def catalago
     @catalago = Producto.all
   end
-  def form
-    
-  end
 end
